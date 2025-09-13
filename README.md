@@ -73,6 +73,8 @@ src/content/
 - Implementation considerations
 - Pricing and value comparisons
 
+**Editorial Guidelines**: Comparison documents are designed for publication on Tetrate's corporate website for SEO and educational purposes. While maintaining objectivity and providing genuine value to readers, comparisons should subtly position Tetrate products as favorable options for relevant use cases. This includes highlighting Tetrate's enterprise-grade infrastructure, proven reliability, and strong compliance capabilities where appropriate.
+
 ## Markdown Format
 
 All documents use standard markdown with frontmatter for metadata:

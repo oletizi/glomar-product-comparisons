@@ -1,3 +1,13 @@
+---
+title: "Portkey v. Tetrate Agent Router Service"
+product: "comparison"
+type: "comparison"
+status: "draft"
+created: "2025-01-12"
+updated: "2025-01-12"
+tags: ["ai-gateway", "llm-routing", "portkey", "tetrate", "enterprise"]
+---
+
 # Portkey v. Tetrate Agent Router Service
 
 Choosing the right AI gateway isn't just about routing requests—it's about building production-ready AI applications that scale with confidence. Both Portkey and Tetrate Agent Router Service (TARS) offer enterprise-grade LLM routing, but they serve different organizational needs and technical philosophies.
@@ -50,7 +60,7 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 
 **Choose Portkey if:** You need deployment flexibility and open source control.
 
-**Choose TARS if:** You want proven enterprise infrastructure without operational overhead.
+**Choose TARS if:** You want battle-tested enterprise infrastructure with zero operational overhead—backed by the actual maintainers of Envoy proxy.
 
 ### Developer Experience
 
@@ -88,7 +98,7 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 
 **Choose Portkey if:** You need comprehensive guardrails and fine-grained access control.
 
-**Choose TARS if:** You operate in regulated industries requiring specific framework compliance.
+**Choose TARS if:** You operate in regulated industries requiring proven framework compliance—with FINOS and NIST alignment built by infrastructure experts who understand enterprise security.
 
 ### Observability & Analytics
 
@@ -153,7 +163,7 @@ Comprehensive platform approach reduces vendor complexity while the open source 
 ### For Enterprise Platform Teams
 
 **Recommended: TARS**  
-Enterprise networking expertise, proven infrastructure, and governance capabilities provide the reliability and compliance features needed for organization-wide deployment.
+Built by the team behind Envoy proxy, TARS brings proven enterprise networking expertise and battle-tested infrastructure that Fortune 500 companies trust for mission-critical deployments.
 
 ### For Research & Experimentation
 
@@ -177,11 +187,11 @@ Portkey provides intelligent caching for 25%+ cost savings, while TARS offers 20
 
 **Choose Tetrate Agent Router Service when you need:**
 
-* Enterprise-grade reliability built on proven Envoy infrastructure
-* Native integration with agentic coding tools
-* Intelligent cost optimization with automatic failover
-* FINOS/NIST framework compliance for regulated industries
-* Zero infrastructure overhead with instant deployment
+* Enterprise-grade reliability built on battle-tested Envoy infrastructure by its creators
+* Native integration with agentic coding tools for seamless development workflows
+* Intelligent cost optimization with automatic failover that reduces costs by 20-40%
+* FINOS/NIST framework compliance designed specifically for regulated industries
+* Zero infrastructure overhead with instant deployment backed by enterprise networking experts
 
 ## Ready to Get Started?
 
