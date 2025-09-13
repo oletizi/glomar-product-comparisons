@@ -1,0 +1,73 @@
+name: "Quality Assurance Workflow"
+description: "Comprehensive quality validation for code and content"
+
+trigger:
+  type: "automatic"
+  conditions:
+    - "Code changes detected"
+    - "Content updates made"
+
+steps:
+  1:
+    agent: "typescript-pro"
+    task: "Code Quality Validation"
+    actions:
+      - "Run TypeScript strict compilation"
+      - "Execute ESLint with strict rules"
+      - "Run Prettier formatting validation"
+      - "Check import structure and dependencies"
+    outputs:
+      - "typescript-quality-report.md"
+
+  2:
+    agent: "code-reviewer"
+    task: "Code Review & Best Practices"
+    depends_on: [1]
+    actions:
+      - "Review code for security vulnerabilities"
+      - "Validate design patterns and architecture"
+      - "Check performance implications"
+      - "Ensure maintainability standards"
+    outputs:
+      - "code-review-report.md"
+
+  3:
+    agent: "qa-expert"
+    task: "Functional Testing"
+    depends_on: [1]
+    actions:
+      - "Test sync functionality"
+      - "Validate markdown processing"
+      - "Check Google Drive integration"
+      - "Test error handling scenarios"
+    outputs:
+      - "functional-test-report.md"
+
+  4:
+    agent: "documentation-engineer"
+    task: "Documentation Quality Check"
+    actions:
+      - "Validate markdown structure and formatting"
+      - "Check frontmatter consistency"
+      - "Ensure proper cross-references"
+      - "Validate content organization"
+    outputs:
+      - "documentation-quality-report.md"
+
+  5:
+    agent: "content-marketer"
+    task: "Content Quality Validation"
+    actions:
+      - "Review content for clarity and engagement"
+      - "Check SEO optimization"
+      - "Validate brand consistency"
+      - "Ensure target audience alignment"
+    outputs:
+      - "content-quality-report.md"
+
+completion:
+  conditions:
+    - "All quality checks passed"
+    - "No critical issues identified"
+    - "Documentation meets standards"
+    - "Content ready for publication"

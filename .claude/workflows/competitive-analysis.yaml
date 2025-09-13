@@ -1,0 +1,76 @@
+name: "Competitive Analysis Workflow"
+description: "Generate detailed product-to-product comparison documents"
+
+trigger:
+  type: "manual"
+  command: "compare-products"
+  parameters:
+    - "product_a"
+    - "product_b"
+
+steps:
+  1:
+    agent: "research-analyst"
+    task: "Comparative Research"
+    actions:
+      - "Gather detailed specs for both products"
+      - "Research pricing and packaging"
+      - "Collect user reviews and feedback"
+      - "Identify key differentiators"
+    outputs:
+      - "[product-a]-research.md"
+      - "[product-b]-research.md"
+
+  2:
+    agent: "competitive-analyst"
+    task: "Feature-by-Feature Analysis"
+    depends_on: [1]
+    actions:
+      - "Create side-by-side feature comparison"
+      - "Analyze strengths and weaknesses"
+      - "Identify use case scenarios"
+      - "Evaluate implementation complexity"
+    outputs:
+      - "[product-a]-v-[product-b]-features.md"
+
+  3:
+    agent: "content-marketer"
+    task: "Positioning & Recommendations"
+    depends_on: [2]
+    actions:
+      - "Develop use case recommendations"
+      - "Create buyer guidance framework"
+      - "Generate decision matrix"
+      - "Position competitive advantages"
+    outputs:
+      - "[product-a]-v-[product-b]-recommendations.md"
+
+  4:
+    agent: "technical-writer"
+    task: "Comparison Document Creation"
+    depends_on: [1, 2, 3]
+    actions:
+      - "Synthesize comparison into comprehensive document"
+      - "Structure for web consumption"
+      - "Optimize for SEO and readability"
+      - "Add interactive elements planning"
+    outputs:
+      - "[product-a]-v-[product-b].md"
+
+  5:
+    agent: "qa-expert"
+    task: "Comparison Validation"
+    depends_on: [4]
+    actions:
+      - "Fact-check comparison accuracy"
+      - "Validate claims and statements"
+      - "Ensure balanced perspective"
+      - "Check formatting and structure"
+    outputs:
+      - "comparison-quality-report.md"
+
+completion:
+  conditions:
+    - "Comprehensive comparison document created"
+    - "Quality validation passed"
+    - "Ready for publication"

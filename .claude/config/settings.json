@@ -1,0 +1,52 @@
+{
+  "project": {
+    "name": "Product Marketing Analysis Generator",
+    "version": "1.0.0",
+    "type": "content-automation"
+  },
+  "agents": {
+    "max_concurrent": 3,
+    "timeout_minutes": 30,
+    "default_temperature": 0.7
+  },
+  "workflows": {
+    "auto_trigger": true,
+    "parallel_execution": true,
+    "rollback_on_failure": true
+  },
+  "quality_gates": {
+    "typescript_compilation": "required",
+    "linting": "required",
+    "content_validation": "required",
+    "sync_verification": "required"
+  },
+  "integrations": {
+    "google_drive": {
+      "enabled": true,
+      "folder_id": "1tTWDDymoF1kZPUpAw8m_JBKYEm6xZGxY",
+      "sync_frequency": "on_demand"
+    },
+    "typescript": {
+      "strict_mode": true,
+      "target": "ES2020",
+      "module": "commonjs"
+    },
+    "markdown": {
+      "frontmatter_required": true,
+      "extensions": [".md"],
+      "ignore_patterns": ["**/node_modules/**", "**/.git/**"]
+    }
+  },
+  "output": {
+    "content_path": "./src/content",
+    "analysis_path": "./src/content/analysis",
+    "comparisons_path": "./src/content/comparisons",
+    "reports_path": "./sync-reports"
+  },
+  "logging": {
+    "level": "info",
+    "include_timestamps": true,
+    "log_workflows": true,
+    "log_agent_interactions": true
+  }
+}

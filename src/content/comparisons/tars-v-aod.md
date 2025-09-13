@@ -1,6 +1,3 @@
----
-doc: "https://docs.google.com/document/d/1DPTxcUcIS0xfgbHqlJCxn2fu014YxmbaSAXyO0Gb13E/edit?tab=t.0"
----
 # Two Paths to AI Excellence: Development vs. Governance
 
 Tetrate offers two complementary solutions for different AI challenges. While both are built on proven Envoy technology,

@@ -1,0 +1,98 @@
+name: "Content Generation Workflow"
+description: "Generate comprehensive product marketing analysis documents"
+
+trigger:
+  type: "manual"
+  command: "generate-content"
+
+steps:
+  1:
+    agent: "research-analyst"
+    task: "Product Research & Data Collection"
+    actions:
+      - "Gather product information and specifications"
+      - "Research market positioning and competitors"
+      - "Collect user feedback and reviews"
+      - "Analyze pricing and feature comparisons"
+    outputs:
+      - "product-research-brief.md"
+      - "competitive-landscape.md"
+
+  2:
+    agent: "competitive-analyst"
+    task: "Competitive Analysis & Positioning"
+    depends_on: [1]
+    actions:
+      - "Analyze competitive positioning"
+      - "Identify differentiation opportunities" 
+      - "Create SWOT analysis"
+      - "Develop strategic recommendations"
+    outputs:
+      - "competitive-analysis.md"
+      - "positioning-recommendations.md"
+
+  3:
+    agent: "content-marketer"
+    task: "Value Proposition Development"
+    depends_on: [1, 2]
+    actions:
+      - "Create core value propositions"
+      - "Develop key messaging framework"
+      - "Define target market positioning"
+      - "Generate benefit statements"
+    outputs:
+      - "[product]-value-proposition.md"
+
+  4:
+    agent: "content-marketer"
+    task: "User Personas Creation"
+    depends_on: [1]
+    actions:
+      - "Define primary user personas"
+      - "Map pain points and motivations"
+      - "Identify behavioral patterns"
+      - "Create decision-making criteria"
+    outputs:
+      - "[product]-user-personas.md"
+
+  5:
+    agent: "content-marketer"
+    task: "User Journey Mapping"
+    depends_on: [3, 4]
+    actions:
+      - "Map adoption timeline and stages"
+      - "Identify critical decision points"
+      - "Analyze acceleration factors"
+      - "Document success patterns"
+    outputs:
+      - "[product]-user-journey.md"
+
+  6:
+    agent: "technical-writer"
+    task: "Content Refinement & Structure"
+    depends_on: [3, 4, 5]
+    actions:
+      - "Refine content for clarity and flow"
+      - "Ensure consistent structure and format"
+      - "Optimize for readability and SEO"
+      - "Add proper markdown frontmatter"
+    outputs:
+      - "Refined analysis documents"
+
+  7:
+    agent: "qa-expert"
+    task: "Content Quality Validation"
+    depends_on: [6]
+    actions:
+      - "Validate content accuracy and completeness"
+      - "Check markdown formatting and structure"
+      - "Ensure consistency across documents"
+      - "Verify metadata and frontmatter"
+    outputs:
+      - "quality-report.md"
+
+completion:
+  conditions:
+    - "All analysis documents generated"
+    - "Quality validation passed"
+    - "Files ready for sync/publication"

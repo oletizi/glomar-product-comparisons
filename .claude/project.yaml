@@ -1,0 +1,102 @@
+name: "Product Marketing Analysis Generator"
+description: "LLM-powered system for generating comprehensive product marketing analysis documents, competitive comparisons, and web content"
+version: "1.0.0"
+
+project_type: "typescript-node-automation"
+technology_stack:
+  - TypeScript
+  - Node.js
+  - Google Drive API
+  - Markdown Processing
+  - Content Generation
+
+primary_functions:
+  - "Generate product value propositions"
+  - "Create user personas and journey maps"
+  - "Produce competitive analysis documents"
+  - "Sync content with Google Drive"
+  - "Transform analysis into web-ready content"
+
+agents:
+  orchestrator:
+    role: "Workflow Coordinator"
+    primary: true
+    responsibilities:
+      - "Coordinate multi-agent workflows"
+      - "Manage task handoffs"
+      - "Ensure quality standards"
+  
+  typescript-pro:
+    role: "TypeScript Development Lead"
+    responsibilities:
+      - "TypeScript code development and optimization"
+      - "Type safety and modern patterns"
+      - "Build system management"
+  
+  javascript-pro:
+    role: "Node.js Backend Specialist"
+    responsibilities:
+      - "Node.js runtime optimization"
+      - "API integrations (Google Drive)"
+      - "Asynchronous processing"
+  
+  content-marketer:
+    role: "Content Strategy Lead"
+    responsibilities:
+      - "Marketing content creation"
+      - "SEO optimization"
+      - "Brand positioning"
+  
+  competitive-analyst:
+    role: "Market Intelligence"
+    responsibilities:
+      - "Competitive research"
+      - "Market positioning analysis"
+      - "Strategic recommendations"
+  
+  documentation-engineer:
+    role: "Documentation Systems"
+    responsibilities:
+      - "Technical documentation"
+      - "Markdown structure optimization"
+      - "Content organization"
+  
+  research-analyst:
+    role: "Data Intelligence"
+    responsibilities:
+      - "Product research"
+      - "Market data analysis"
+      - "Insight generation"
+  
+  technical-writer:
+    role: "Content Creation"
+    responsibilities:
+      - "Technical content writing"
+      - "Documentation clarity"
+      - "User-focused content"
+  
+  qa-expert:
+    role: "Quality Assurance"
+    responsibilities:
+      - "Content quality validation"
+      - "Process testing"
+      - "Quality metrics"
+  
+  code-reviewer:
+    role: "Code Quality"
+    responsibilities:
+      - "TypeScript code review"
+      - "Best practices enforcement"
+      - "Security validation"
+
+workflows:
+  - "content-generation"
+  - "competitive-analysis"
+  - "quality-assurance" 
+  - "sync-and-deploy"
+
+quality_standards:
+  code_quality: "TypeScript strict mode, ESLint, Prettier"
+  content_quality: "Structured markdown, metadata validation"
+  testing: "Unit tests for utilities, integration tests for sync"
+  documentation: "Comprehensive API docs, usage examples"

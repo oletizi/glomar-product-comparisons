@@ -1,108 +1,103 @@
-# Product Comparisons - Google Drive Sync
+# Product Marketing Analysis Generator
 
-This project synchronizes markdown files with Google Drive documents using the Tetrateio Scully client.
+This project uses LLMs to generate comprehensive product marketing analysis documents that inform competitive product comparisons and web content creation.
+
+## Project Goals
+
+Generate structured marketing analysis documents for technology products using AI, focusing on three key areas:
+
+1. **Product Value Proposition** - Core value statements, key benefits, market positioning, and competitive differentiation
+2. **User Personas** - Detailed user profiles, pain points, behavioral patterns, and decision-making criteria  
+3. **User Adoption Journeys** - End-to-end adoption paths, decision points, acceleration factors, and success patterns
+
+These analysis documents serve as the foundation for creating compelling product comparison web content and marketing materials.
+
+## Document Structure
+
+The project organizes analysis documents by product in the following structure:
+
+```
+src/content/
+├── analysis/
+│   ├── [product-name]/
+│   │   ├── [product-name]-value-proposition.md
+│   │   ├── [product-name]-user-personas.md
+│   │   └── [product-name]-user-journey.md
+│   └── ...
+├── comparisons/
+    └── [product-a]-v-[product-b].md
+```
 
 ## Setup
 
-1. **Configure Google Drive folder:**
-   - Edit `config.json` and add your Google Drive folder ID
-   - Set up Google API credentials using scully-config (see Authentication section)
-
-2. **Install dependencies:**
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Build the TypeScript code:**
+2. **Build the TypeScript code:**
    ```bash
    npm run build
    ```
 
-## Authentication
+## Content Types
 
-This tool uses the `@tetrateio/scully-clients` package which handles Google OAuth2 authentication through encrypted configuration storage. To set up authentication:
+### Value Proposition Documents
+- Core value proposition statements
+- Key benefits and features
+- Target market positioning
+- Competitive differentiation
+- Business impact metrics
+- Technical foundation details
 
-```bash
-# Set up Google OAuth2 credentials interactively
-npx scully-clients google-auth setup
-```
+### User Personas Documents
+- Primary user personas and characteristics
+- Pain points and motivations
+- Behavioral patterns and preferences
+- Decision-making criteria
+- Market segments and demographics
+- Use case scenarios
 
-Follow the prompts to configure your Google API credentials. Credentials are securely stored in `~/.config/scully/`.
+### User Journey Documents
+- Adoption timeline and stages
+- Critical decision points
+- Acceleration and friction factors
+- Success patterns by user type
+- Implementation approaches
+- ROI and business case development
 
-## Usage
+### Product Comparisons
+- Side-by-side feature analysis
+- Strengths and weaknesses assessment
+- Use case recommendations
+- Implementation considerations
+- Pricing and value comparisons
 
-### Sync Markdown to Google Drive
-Updates existing Google Docs with markdown content and generates a report for documents that need to be created:
-```bash
-npm run sync
-```
+## Markdown Format
 
-## How It Works
-
-### For Existing Documents
-- If a markdown file has a `doc` field in its frontmatter, the program updates the corresponding Google Doc
-- Each document gets a metadata table at the top with sync information
-- The document content is replaced with the latest markdown content
-
-### For New Documents
-- If a markdown file doesn't have a `doc` field, it's added to the "needs creation" report
-- The program generates detailed instructions for manually creating the Google Doc
-- Provides the exact content to paste into the new document
-- Instructions include how to link the document back to the markdown file
-
-## File Structure
-
-- `src/content/` - Markdown files to sync
-- `config.json` - Configuration for Google Drive folder and sync settings
-- `src/sync-docs.ts` - Main synchronization program
-- `latest-sync-report.md` - Human-readable sync report
-- `sync-report-[timestamp].json` - Detailed JSON sync report
-
-## Markdown Frontmatter
-
-Markdown files should include a `doc` field in the frontmatter with the Google Drive document URL:
+All documents use standard markdown with frontmatter for metadata:
 
 ```yaml
 ---
-title: My Document
-doc: https://docs.google.com/document/d/DOCUMENT_ID/edit
+title: Product Name Analysis
 status: Draft
 ---
 ```
 
-## Google Drive Document Format
+## Output Usage
 
-Documents in Google Drive will have a metadata table at the top containing:
-- Last Updated timestamp
-- Source Path to the markdown file
-- Title
-- Status
+The generated analysis documents are used to:
 
-## Configuration
+- Create product comparison web content
+- Develop marketing messaging and positioning
+- Inform sales enablement materials  
+- Guide content marketing strategies
+- Support competitive intelligence initiatives
+- Generate buyer journey content
 
-Edit `config.json` to customize:
+## File Structure
 
-```json
-{
-  "googleDrive": {
-    "folderId": "YOUR_GOOGLE_DRIVE_FOLDER_ID"
-  },
-  "sync": {
-    "contentPath": "./src/content",
-    "extensions": [".md"],
-    "ignorePatterns": ["**/node_modules/**", "**/.git/**"]
-  }
-}
-```
-
-## Reports
-
-After each sync, the tool generates two reports:
-
-1. **`latest-sync-report.md`** - Human-readable report with:
-   - Summary statistics
-   - List of documents that need manual creation with step-by-step instructions
-   - Actions taken during sync
-   - Any errors encountered
-
-2. **`sync-report-[timestamp].json`** - Detailed JSON report for programmatic analysis
+- `src/content/analysis/` - Product analysis documents organized by product
+- `src/content/comparisons/` - Product-to-product comparison documents
+- `src/sync-docs.ts` - Document synchronization utilities
+- `src/markdown-to-docs.ts` - Markdown processing utilities
