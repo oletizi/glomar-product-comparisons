@@ -1,6 +1,3 @@
----
-doc: "https://docs.google.com/document/d/17FKNcSqzTjXew1oDCsFsADJJwS23Typ5Qp5J5GfHeKM/edit"
----
 # Tetrate Agent Router Service Value Proposition
 
 ## Core Value Proposition
@@ -18,18 +15,18 @@ The service provides a single unified entry point for all LLM calls and handles 
 an OpenAI-compatible endpoint. This eliminates the friction of managing multiple API keys and provider relationships,
 allowing developers to get started in minutes rather than hours or days.
 
-### 2. Cost Optimization & Performance
+**Getting Started**: Developers receive $5 free credits at signup with no credit card required, enabling immediate experimentation and evaluation.
 
-The service allows developers to route AI queries dynamically to the most appropriate model based on optimization
-factors such as:
+### 2. Design-Time Model Selection & Runtime Routing
 
-- Inferencing cost
-- Query complexity
-- Model performance
-- Task specificity
+Tetrate Agent Router Service makes it easy to compare hundreds of models at design time to find the best task-to-model fit through its built-in playground and comparison tools. Once developers identify optimal models for their tasks, the service provides:
 
-It offers intelligent routing strategies that can automatically switch between models based on availability or cost,
-preventing runaway expenses while maintaining application performance.
+- **Design-time optimization**: Side-by-side model comparison to identify the best fit for specific tasks
+- **Runtime routing**: Intelligent routing to the right model for each task through a common API endpoint
+- **Seamless failover**: Automatic fallback to alternate models during provider service interruptions
+- **Cost transparency**: Flat 5% fee over provider cost with no hidden charges
+
+This approach ensures developers can make informed model choices upfront, then rely on reliable routing and failover for seamless customer experiences.
 
 ### 3. Reliability & Resilience
 
@@ -108,12 +105,13 @@ experiment freely, while organizations require visibility, control, and complian
 
 TARS delivers measurable business value through:
 
-- **Reduced Operational Costs**: Intelligent resource allocation and model selection
-- **Improved Performance**: Reduced latency and optimized resource utilization
-- **Enhanced Reliability**: Built-in resilience and fault tolerance
-- **Simplified Operations**: Centralized management of AI traffic flows
-- **Future-Proof Architecture**: Extensible platform that evolves with AI needs
-- **Faster Time-to-Market**: Developers can focus on building rather than infrastructure
+- **Transparent Pricing**: Simple 5% flat fee over provider cost with no hidden charges or markup complexity
+- **Reduced Operational Costs**: Intelligent model selection and failover capabilities
+- **Improved Performance**: Reduced latency through optimized routing and provider selection
+- **Enhanced Reliability**: Built-in resilience and automatic failover for uninterrupted service
+- **Simplified Operations**: Centralized management of AI traffic flows without infrastructure overhead
+- **Future-Proof Architecture**: Extensible platform that evolves with AI technology advances
+- **Risk-Free Trial**: $5 free credits enable evaluation without upfront commitment
 
 ## Summary
 
