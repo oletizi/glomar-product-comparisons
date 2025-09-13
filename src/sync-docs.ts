@@ -125,19 +125,22 @@ class DocSynchronizer {
   }
 
   private async findMarkdownFiles(): Promise<MarkdownFile[]> {
-    const pattern = path.join(
-      this.config.sync.contentPath,
-      '**',
-      `*{${this.config.sync.extensions.join(',')}}`
+    const patterns = this.config.sync.extensions.map(ext => 
+      path.join(this.config.sync.contentPath, '**', `*${ext}`)
     );
     
-    const files = await glob(pattern, {
-      ignore: this.config.sync.ignorePatterns,
-    });
+    let allFiles: string[] = [];
+    for (const pattern of patterns) {
+      const files = await glob(pattern, {
+        ignore: this.config.sync.ignorePatterns,
+      });
+      allFiles = [...allFiles, ...files];
+    }
+    
     
     const markdownFiles: MarkdownFile[] = [];
     
-    for (const filePath of files) {
+    for (const filePath of allFiles) {
       const content = await fs.readFile(filePath, 'utf-8');
       const parsed = matter(content);
       
