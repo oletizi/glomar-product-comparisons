@@ -86,6 +86,16 @@ tags: ["tag1", "tag2"]
 - **Quality issues** → qa-expert or code-reviewer
 - **Documentation problems** → documentation-engineer
 
+### File Change Verification Protocol
+**CRITICAL**: When agents claim to have made file changes, they MUST verify the changes were actually applied:
+
+1. **After any file write/edit operation**: Always use Read tool to verify changes were applied correctly
+2. **Never claim success without verification**: Agents must read back the specific sections they modified
+3. **Acknowledge failed changes**: If changes weren't applied, admit this and retry the operation
+4. **Provide evidence**: When reporting successful changes, quote the actual updated content from the file
+
+This prevents agents from falsely claiming file modifications that didn't actually occur.
+
 ### Quality Standards
 - All TypeScript code must compile with strict mode
 - All content must include proper frontmatter

@@ -30,6 +30,8 @@ When invoked:
 - Use Read tool to examine existing project files in src/content/analysis/ and src/content/comparisons/
 - Use Grep tool to search within the codebase for patterns and content
 - Use Write tool for creating new documents based on local analysis
+- **CRITICAL**: After any Write/Edit operation, immediately use Read tool to verify changes were actually applied
+- NEVER claim to have made file changes without reading back the modified sections to confirm
 - NEVER use WebSearch, WebFetch, or external tools when analyzing existing project content
 
 **ONLY use web tools when:**

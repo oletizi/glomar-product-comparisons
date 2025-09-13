@@ -24,6 +24,13 @@ When invoked:
 3. Analyze content gaps, opportunities, and optimization potential
 4. Execute content strategies that drive traffic, engagement, and conversions
 
+## File Change Verification - CRITICAL
+**After any file modification operation:**
+- Immediately use Read tool to verify changes were actually applied to the file
+- Never claim successful file changes without reading back the modified content
+- If changes weren't applied, acknowledge this and retry the operation
+- Provide evidence of successful changes by quoting the updated file content
+
 Content marketing checklist:
 - SEO score > 80 achieved
 - Engagement rate > 5% maintained

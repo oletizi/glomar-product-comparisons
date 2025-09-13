@@ -1,5 +1,5 @@
 ---
-title: "Portkey v. Tetrate Agent Router Service"
+title: "Tetrate Agent Router Service v. Portkey"
 product: "comparison"
 type: "comparison"
 status: "draft"
@@ -8,25 +8,11 @@ updated: "2025-01-12"
 tags: ["ai-gateway", "llm-routing", "portkey", "tetrate", "enterprise"]
 ---
 
-# Portkey v. Tetrate Agent Router Service
+# Tetrate Agent Router Service v. Portkey
 
 Choosing the right AI gateway isn't just about routing requests—it's about building production-ready AI applications that scale with confidence. Both Portkey and Tetrate Agent Router Service (TARS) offer enterprise-grade LLM routing, but they serve different organizational needs and technical philosophies.
 
 ## Quick Comparison
-
-### Portkey
-
-**Best for:** Teams needing a comprehensive LLMOps platform with full observability, guardrails, and governance capabilities across the entire AI application lifecycle.
-
-✓ Full-stack LLMOps platform (Gateway + Observability + Guardrails + Prompt Management)
-
-✓ 200+ LLMs from 45+ providers through unified API
-
-✓ Production-proven at 2+ trillion tokens across 650+ teams
-
-✓ Open source self-hostable option for complete control
-
-✓ Advanced prompt playground with A/B testing capabilities
 
 ### Tetrate Agent Router Service
 
@@ -42,15 +28,23 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 
 ✓ 99.9%+ uptime with enterprise networking expertise
 
+### Portkey
+
+**Best for:** Teams needing a comprehensive LLMOps platform with full observability, guardrails, and governance capabilities across the entire AI application lifecycle.
+
+✓ Full-stack LLMOps platform (Gateway + Observability + Guardrails + Prompt Management)
+
+✓ 200+ LLMs from 45+ providers through unified API
+
+✓ Production-proven at 2+ trillion tokens across 650+ teams
+
+✓ Open source self-hostable option for complete control
+
+✓ Advanced prompt playground with A/B testing capabilities
+
 ## Detailed Comparison
 
 ### Architecture & Technical Foundation
-
-**Portkey Architecture:**
-- Open source gateway core with cloud-managed control plane
-- Self-hostable on Docker, Node.js, Cloudflare, Kubernetes
-- Edge deployment capabilities for global distribution
-- OpenAI-compatible API with 2-minute integration
 
 **TARS Architecture:**
 - Built on Envoy proxy by the maintainers themselves
@@ -58,17 +52,17 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 - Design-time model comparison with runtime routing algorithms
 - Managed service with zero infrastructure overhead
 
-**Choose Portkey if:** You need deployment flexibility and open source control.
+**Portkey Architecture:**
+- Open source gateway core with cloud-managed control plane
+- Self-hostable on Docker, Node.js, Cloudflare, Kubernetes
+- Edge deployment capabilities for global distribution
+- OpenAI-compatible API with 2-minute integration
 
 **Choose TARS if:** You want battle-tested enterprise infrastructure with zero operational overhead—backed by the actual maintainers of Envoy proxy.
 
-### Developer Experience
+**Choose Portkey if:** You need deployment flexibility and open source control.
 
-**Portkey Integration:**
-- 2-minute setup with any LLM provider
-- Universal prompt playground for testing
-- Native integrations with LangChain, LlamaIndex, CrewAI
-- Collaborative editing and sharing capabilities
+### Developer Experience
 
 **TARS Integration:**
 - One-click setup with $5 free credits, no credit card required
@@ -76,9 +70,15 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 - Native integration with Goose and Cline tools
 - OpenAI-compatible API for easy migration
 
-**Choose Portkey if:** You need comprehensive prompt engineering workflows.
+**Portkey Integration:**
+- 2-minute setup with any LLM provider
+- Universal prompt playground for testing
+- Native integrations with LangChain, LlamaIndex, CrewAI
+- Collaborative editing and sharing capabilities
 
 **Choose TARS if:** You're focused on agentic coding and development velocity.
+
+**Choose Portkey if:** You need comprehensive prompt engineering workflows.
 
 ### Enterprise Features & Governance
 
