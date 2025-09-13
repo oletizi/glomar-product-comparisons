@@ -69,6 +69,11 @@ class DocSynchronizer {
 
   constructor(config: Config) {
     this.config = config;
+    
+    if (!process.env.SCULLY_CONFIG_PASSWORD) {
+      throw new Error('SCULLY_CONFIG_PASSWORD environment variable is required but not set');
+    }
+    
     this.docsClient = createGoogleDocsClient();
     this.report = this.initializeReport();
   }
@@ -263,8 +268,11 @@ class DocSynchronizer {
   }
 
   private async saveReport(): Promise<void> {
-    const reportPath = path.join(process.cwd(), `sync-report-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
-    const readableReportPath = path.join(process.cwd(), 'latest-sync-report.md');
+    const reportsDir = path.join(process.cwd(), 'sync-reports');
+    await fs.mkdir(reportsDir, { recursive: true });
+    
+    const reportPath = path.join(reportsDir, `sync-report-${new Date().toISOString().replace(/[:.]/g, '-')}.json`);
+    const readableReportPath = path.join(reportsDir, 'latest-sync-report.md');
     
     await fs.writeFile(reportPath, JSON.stringify(this.report, null, 2));
     
