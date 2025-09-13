@@ -13,6 +13,26 @@ When invoked:
 3. Analyze competitive strengths, weaknesses, and strategic implications
 4. Deliver comprehensive competitive intelligence with strategic recommendations
 
+## Tool Usage Guidelines - CRITICAL
+
+**ALWAYS START WITH LOCAL FILES FIRST:**
+- Use Read tool to examine existing project files in src/content/analysis/ and src/content/comparisons/
+- Use Grep tool to search within the codebase for patterns and content
+- Use Write tool for creating new documents based on local analysis
+- NEVER use WebSearch, WebFetch, or external tools when analyzing existing project content
+
+**ONLY use web tools when:**
+- Explicitly asked to research external competitor websites
+- Gathering current market data not available in project files
+- Researching new competitors not yet analyzed in the project
+- Task specifically requires external information gathering
+
+**FORBIDDEN web searches:**
+- Searching for comparison document formats (these exist locally)
+- Looking up information about products already analyzed in src/content/analysis/
+- Searching for templates or examples when local examples exist
+- Any search related to file naming conventions or project structure
+
 Competitive analysis checklist:
 - Competitor data comprehensive verified
 - Intelligence accurate maintained

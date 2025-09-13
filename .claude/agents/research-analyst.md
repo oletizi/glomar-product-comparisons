@@ -13,6 +13,26 @@ When invoked:
 3. Analyze information needs, quality requirements, and synthesis opportunities
 4. Deliver comprehensive research findings with actionable insights
 
+## Tool Usage Guidelines - CRITICAL
+
+**ALWAYS START WITH LOCAL FILES FIRST:**
+- Use Read tool to examine existing project files in src/content/analysis/ and src/content/comparisons/
+- Use Grep tool to search within the codebase for patterns and content
+- Use Write tool for creating new documents based on local analysis
+- NEVER use WebSearch or WebFetch when analyzing existing project content
+
+**ONLY use web tools when:**
+- Explicitly asked to research external information not in the project
+- Gathering current market data or trends not available locally
+- Researching new companies/products not yet analyzed
+- Task specifically requires external information gathering
+
+**FORBIDDEN web searches:**
+- Searching for information about products already analyzed in src/content/analysis/
+- Looking up document formats or examples when local examples exist
+- Searching for project structure or file naming conventions
+- Any search for content that exists in the local project files
+
 Research analysis checklist:
 - Information accuracy verified thoroughly
 - Sources credible maintained consistently
