@@ -1,15 +1,22 @@
 {
-  "name": "glomar-product-comparisons",
+  "name": "product-comparisons",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "description": "Sync markdown files with Google Drive documents",
+  "main": "dist/sync-docs.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "sync": "npm run build && node dist/sync-docs.js sync",
+    "pull": "npm run build && node dist/sync-docs.js pull",
+    "sync:both": "npm run build && node dist/sync-docs.js both",
+    "dev": "tsc --watch"
   },
   "dependencies": {
-    "@tetrateio/scully-clients": "^0.2.5"
+    "@tetrateio/scully-clients": "^0.2.5",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^24.3.2",
+    "glob": "^11.0.3",
+    "googleapis": "^159.0.0",
+    "gray-matter": "^4.0.3",
+    "typescript": "^5.9.2"
   }
 }

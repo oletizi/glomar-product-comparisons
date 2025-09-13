@@ -1,8 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm config get:*)",
-      "Bash(npm install:*)"
+      "Read(//Users/orion/work/glomar-product-comparisons/src/content/**)",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []
