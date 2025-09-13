@@ -36,7 +36,7 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 
 ✓ Native integration with Goose, Cline, and agentic coding tools
 
-✓ Intelligent routing with automatic failover and cost optimization
+✓ Design-time model comparison with runtime routing and automatic failover
 
 ✓ NIST and FINOS framework alignment for regulated industries
 
@@ -55,7 +55,7 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 **TARS Architecture:**
 - Built on Envoy proxy by the maintainers themselves
 - Multi-region cloud-native architecture
-- Context-aware routing algorithms
+- Design-time model comparison with runtime routing algorithms
 - Managed service with zero infrastructure overhead
 
 **Choose Portkey if:** You need deployment flexibility and open source control.
@@ -71,8 +71,8 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 - Collaborative editing and sharing capabilities
 
 **TARS Integration:**
-- One-click setup with $10 free credits
-- Built-in side-by-side model comparison
+- One-click setup with $5 free credits, no credit card required
+- Built-in side-by-side model comparison for design-time optimization
 - Native integration with Goose and Cline tools
 - OpenAI-compatible API for easy migration
 
@@ -111,7 +111,7 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 
 **TARS Observability:**
 - Detailed transaction inspection and troubleshooting
-- Intelligent cost optimization with 20-40% typical reduction
+- Intelligent cost optimization with design-time model selection
 - Circuit breaking and automatic failover monitoring
 - Load balancing metrics optimized for AI workloads
 - Built-in reliability and performance analytics
@@ -129,14 +129,14 @@ Choosing the right AI gateway isn't just about routing requests—it's about bui
 - Pay-per-request model with volume discounts
 
 **TARS Pricing:**
-- Self-serve model with instant access
-- $10 free credits for trial
+- Transparent flat 5% fee over provider cost
+- $5 free credits for trial, no credit card required
 - Pay-as-you-go without upfront commitments
 - No enterprise sales friction for getting started
 
 **Choose Portkey if:** You prefer transparent tiered pricing with comprehensive features.
 
-**Choose TARS if:** You want simple pay-as-you-go with immediate access.
+**Choose TARS if:** You want simple transparent pricing with immediate access and no hidden charges.
 
 ## Use Case Recommendations
 
@@ -173,7 +173,7 @@ Advanced prompt playground, A/B testing capabilities, and access to 200+ models 
 ### For Cost-Sensitive Applications
 
 **Both work well**  
-Portkey provides intelligent caching for 25%+ cost savings, while TARS offers 20-40% cost reduction through intelligent routing. Evaluate based on your specific usage patterns.
+Portkey provides intelligent caching for 25%+ cost savings, while TARS offers transparent pricing with a flat 5% fee and design-time model optimization to help find the most cost-effective solutions. Evaluate based on your specific usage patterns.
 
 ## The Bottom Line
 
@@ -189,9 +189,9 @@ Portkey provides intelligent caching for 25%+ cost savings, while TARS offers 20
 
 * Enterprise-grade reliability built on battle-tested Envoy infrastructure by its creators
 * Native integration with agentic coding tools for seamless development workflows
-* Intelligent cost optimization with automatic failover that reduces costs by 20-40%
+* Design-time model comparison with reliable runtime routing and automatic failover
 * FINOS/NIST framework compliance designed specifically for regulated industries
-* Zero infrastructure overhead with instant deployment backed by enterprise networking experts
+* Zero infrastructure overhead with transparent pricing and instant deployment backed by enterprise networking experts
 
 ## Ready to Get Started?
 
@@ -206,7 +206,7 @@ Both platforms offer immediate access and free trials to evaluate fit for your s
 
 ### Try Tetrate Agent Router Service
 
-* $10 free credits, no credit card required
+* $5 free credits, no credit card required
 * One-click setup with agentic tools
 * Enterprise-grade reliability from day one
 * Start Free Trial →
