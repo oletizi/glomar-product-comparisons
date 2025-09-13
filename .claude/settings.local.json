@@ -7,7 +7,8 @@
       "Bash(node:*)",
       "Bash(npm run sync:*)",
       "Bash(SCULLY_CONFIG_PASSWORD=test npm run sync)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
