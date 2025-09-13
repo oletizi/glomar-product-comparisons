@@ -3,6 +3,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import { glob } from 'glob';
 import matter from 'gray-matter';
+import { createMarkdownConverter } from './markdown-to-docs.js';
 
 interface Config {
   googleDrive: {
@@ -205,22 +206,25 @@ class DocSynchronizer {
       const doc = await this.docsClient.getDocument({ documentId: docId });
       
       const metadataTable = this.createMetadataTable(file);
-      const newContent = `${metadataTable}\n\n${file.content}`;
+      const fullMarkdown = `${metadataTable}\n\n${file.content}`;
       
       const currentContent = this.extractTextFromDoc(doc);
       
+      // Clear existing content first
       if (currentContent.trim()) {
-        const replacementCount = await this.docsClient.replaceText(
-          docId,
-          currentContent.trim(),
-          newContent
-        );
-        
-        if (replacementCount === 0) {
-          await this.docsClient.appendText(docId, `\n\n--- Updated ${new Date().toISOString()} ---\n\n${newContent}`);
-        }
+        await this.docsClient.replaceText(docId, currentContent.trim(), '');
+      }
+      
+      // Convert markdown to Google Docs requests
+      const converter = createMarkdownConverter();
+      const requests = await converter.convertMarkdownToGoogleDocs(fullMarkdown);
+      
+      if (requests.length > 0) {
+        // Use batchUpdate to apply all formatting requests
+        await this.docsClient.batchUpdate(docId, requests);
       } else {
-        await this.docsClient.insertText(docId, newContent, 1);
+        // Fallback to plain text if conversion fails
+        await this.docsClient.insertText(docId, fullMarkdown, 1);
       }
     } catch (error) {
       throw new Error(`Failed to update document ${docId}: ${error}`);
